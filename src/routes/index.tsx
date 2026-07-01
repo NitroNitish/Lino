@@ -162,7 +162,7 @@ function Index() {
             </h2>
           </div>
           <div className="px-[42px] pb-10">
-            <a href="#subscribe" className="block overflow-hidden rounded-[14px] group">
+            <a href="#subscribe" aria-label="Subscribe to see the latest issue" className="block overflow-hidden rounded-[14px] group">
               <video
                 autoPlay
                 muted
@@ -211,7 +211,7 @@ function Index() {
             </h2>
           </div>
           <div className="px-[42px] pb-10">
-            <a href="#subscribe" className="block overflow-hidden rounded-[14px] group">
+            <a href="#subscribe" aria-label="Subscribe to see the latest issue" className="block overflow-hidden rounded-[14px] group">
               <video
                 autoPlay
                 muted
@@ -257,6 +257,7 @@ function Index() {
                 <input
                   type="email"
                   required
+                  aria-label="Email address for newsletter subscription"
                   placeholder="Enter your email"
                   className="flex-1 rounded-lg px-4 py-3 bg-white text-[#1E1E1E] placeholder:text-[#83837D] outline-none border border-transparent focus:border-[#1E1E1E] font-medium"
                 />
