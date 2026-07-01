@@ -120,7 +120,7 @@ function Index() {
               <div className="flex-1" />
               <h1
                 style={serif}
-                className="text-white text-[58px] leading-[1.02] tracking-tight max-w-[560px]"
+                className="text-white text-5xl sm:text-[58px] leading-[1.02] tracking-tight max-w-[560px]"
               >
                 Technology. Science.
                 <br />
@@ -137,7 +137,7 @@ function Index() {
           </section>
 
           {/* Section 2 — Intro */}
-          <section className="px-[78px] pb-8 pt-4">
+          <section className="px-6 sm:px-[78px] pb-8 pt-4">
             <p className="text-center text-[18px] leading-[1.55]">
               Lino is one carefully curated newsletter covering artificial
               intelligence, startups, scientific discoveries, engineering,
@@ -153,27 +153,27 @@ function Index() {
           <Divider />
 
           {/* Section 3 */}
-          <div className="px-9 pb-8">
+          <div className="px-6 sm:px-9 pb-8">
             <h2
               style={serif}
-              className="text-center text-[46px] leading-[1.05] tracking-tight"
+              className="text-center text-4xl sm:text-[46px] leading-[1.05] tracking-tight"
             >
               The future, explained simply
             </h2>
           </div>
-          <div className="px-[42px] pb-10">
+          <div className="px-4 sm:px-[42px] pb-10">
             <a href="#subscribe" aria-label="Subscribe to see the latest issue" className="block overflow-hidden rounded-[14px] group">
               <video
                 autoPlay
                 muted
                 loop
                 playsInline
-                className="w-full h-[370px] object-cover rounded-[14px] transition-transform duration-700 group-hover:scale-[1.03]"
+                className="w-full h-[250px] sm:h-[370px] object-cover rounded-[14px] transition-transform duration-700 group-hover:scale-[1.03]"
                 src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260419_065931_e3ca7b53-d32e-4ad5-81de-dc9d6fcfda6d.mp4"
               />
             </a>
           </div>
-          <div className="px-[76px] pb-10">
+          <div className="px-6 sm:px-[76px] pb-10">
             <div className="max-w-[489px] mx-auto">
               <Step number={1}>
                 Understand the biggest stories in AI, robotics, and science —
@@ -200,29 +200,29 @@ function Index() {
           <Divider />
 
           {/* Section 4 */}
-          <div className="pb-7 px-9">
+          <div className="pb-7 px-6 sm:px-9">
             <h2
               style={serif}
-              className="text-center text-[46px] leading-[1.05] tracking-tight"
+              className="text-center text-4xl sm:text-[46px] leading-[1.05] tracking-tight"
             >
               One email. Five minutes.
               <br />
               Complete clarity.
             </h2>
           </div>
-          <div className="px-[42px] pb-10">
+          <div className="px-4 sm:px-[42px] pb-10">
             <a href="#subscribe" aria-label="Subscribe to see the latest issue" className="block overflow-hidden rounded-[14px] group">
               <video
                 autoPlay
                 muted
                 loop
                 playsInline
-                className="w-full h-[370px] object-cover rounded-[14px] transition-transform duration-700 group-hover:scale-[1.03]"
+                className="w-full h-[250px] sm:h-[370px] object-cover rounded-[14px] transition-transform duration-700 group-hover:scale-[1.03]"
                 src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260417_110451_9f82b157-dc92-4a9f-a341-c25594ec20e1.mp4"
               />
             </a>
           </div>
-          <div className="px-[78px] pb-8">
+          <div className="px-6 sm:px-[78px] pb-8">
             <p className="text-center text-[18px] leading-[1.55]">
               Every week, you'll receive a single, thoughtfully edited issue
               covering the most important developments across AI, science,
@@ -236,11 +236,11 @@ function Index() {
           </div>
 
           {/* Section 5 — Lime CTA */}
-          <section id="subscribe" className="px-14 pb-12">
-            <div className="bg-[#D8F90A] rounded-[10px] px-8 py-12 text-center">
+          <section id="subscribe" className="px-4 sm:px-14 pb-12">
+            <div className="bg-[#D8F90A] rounded-[10px] px-6 sm:px-8 py-12 text-center">
               <h2
                 style={serif}
-                className="text-[#1E1E1E] text-[52px] leading-[1.02] tracking-tight mb-3"
+                className="text-[#1E1E1E] text-4xl sm:text-[52px] leading-[1.02] tracking-tight mb-3"
               >
                 Ready to read
                 <br />
@@ -277,7 +277,7 @@ function Index() {
         </div>
 
         {/* Footer */}
-        <footer className="bg-[#080808] text-white pt-12 px-10 text-center border-t border-white/5">
+        <footer className="bg-[#080808] text-white pt-12 px-6 sm:px-10 text-center border-t border-white/5">
           <div className="pb-8 flex justify-center">
             <a
               href="#"
