@@ -74,7 +74,7 @@ function Index() {
     <div className="min-h-screen bg-[#111111] font-sans text-[#F2F2F2] flex flex-col">
       <div className="w-full flex-1">
         {/* Section 1 — Hero */}
-        <section className="relative w-full overflow-hidden h-[85vh] min-h-[600px] max-h-[900px] flex flex-col justify-end">
+        <section className="relative w-full overflow-hidden h-[85svh] min-h-[480px] max-h-[800px] flex flex-col justify-end">
           <video
             autoPlay
             muted
@@ -90,15 +90,15 @@ function Index() {
                 "linear-gradient(to bottom, rgba(17,17,17,0) 30%, rgba(17,17,17,0.5) 60%, rgba(17,17,17,0.95) 85%, rgba(17,17,17,1) 100%)",
             }}
           />
-          <div className="relative z-10 w-full flex flex-col items-center text-center px-6 pt-12 pb-16">
-            <div className="absolute top-12 left-1/2 -translate-x-1/2 text-white text-center">
+          <div className="relative z-10 w-full flex flex-col items-center text-center px-6 pt-10 pb-10">
+            <div className="absolute top-8 left-1/2 -translate-x-1/2 text-white text-center">
               <div style={serif} className="text-[28px] leading-[0.95] tracking-tight">
                 Lino
               </div>
               <div className="text-[12px] tracking-[0.22em] font-medium mt-1">NEWSLETTER</div>
             </div>
 
-            <div className="text-white text-[12px] tracking-[0.28em] font-semibold mb-6">
+            <div className="text-white text-[12px] tracking-[0.28em] font-semibold mb-4 mt-6">
               NOW READING
             </div>
             <h1
@@ -111,7 +111,7 @@ function Index() {
             </h1>
             <a
               href="#subscribe"
-              className="mt-8 inline-flex items-center gap-3 bg-[#D8F90A] text-[#1E1E1E] font-semibold rounded-full px-7 py-3.5 hover:bg-[#c9ea00] hover:-translate-y-0.5 transition-all duration-200 text-[15px]"
+              className="mt-6 inline-flex items-center gap-3 bg-[#D8F90A] text-[#1E1E1E] font-semibold rounded-full px-7 py-3.5 hover:bg-[#c9ea00] hover:-translate-y-0.5 transition-all duration-200 text-[15px]"
             >
               Subscribe Free
               <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
