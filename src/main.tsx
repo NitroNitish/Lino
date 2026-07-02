@@ -2,14 +2,24 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider, createRouter } from "@tanstack/react-router";
 
+import { QueryClient } from "@tanstack/react-query";
+
 // Import the generated route tree
 import { routeTree } from "./routeTree.gen";
 
 // Import global styles
 import "./styles.css";
 
+// Create a new QueryClient instance
+const queryClient = new QueryClient();
+
 // Create a new router instance
-const router = createRouter({ routeTree });
+const router = createRouter({
+  routeTree,
+  context: {
+    queryClient,
+  },
+});
 
 // Register the router instance for type safety
 declare module "@tanstack/react-router" {
