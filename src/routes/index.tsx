@@ -71,11 +71,11 @@ const socials = [
 
 function Index() {
   return (
-    <div className="min-h-screen bg-[#050505] py-10 px-4 font-sans">
-      <div className="max-w-[640px] mx-auto shadow-2xl overflow-hidden ring-1 ring-white/5">
+    <div className="min-h-screen bg-[#050505] p-2 sm:p-4 font-sans">
+      <div className="w-full max-w-[1400px] mx-auto shadow-2xl overflow-hidden ring-1 ring-white/5 rounded-xl sm:rounded-2xl">
         <div className="bg-[#111111] text-[#F2F2F2]">
           {/* Section 1 — Hero */}
-          <section className="relative w-full overflow-hidden" style={{ aspectRatio: "640 / 820" }}>
+          <section className="relative w-full overflow-hidden h-[85svh] min-h-[520px] max-h-[850px] flex flex-col justify-end">
             <video
               autoPlay
               muted
@@ -91,14 +91,14 @@ function Index() {
                   "linear-gradient(to bottom, rgba(17,17,17,0) 45%, rgba(17,17,17,0.45) 68%, rgba(17,17,17,0.9) 88%, rgba(17,17,17,1) 100%)",
               }}
             />
-            <div className="relative z-10 h-full flex flex-col items-center text-center px-6 pt-12 pb-10">
+            <div className="relative z-10 h-full flex flex-col items-center text-center px-6 pt-12 pb-12">
               <div className="text-white">
                 <div style={serif} className="text-[28px] leading-[0.95] tracking-tight">
                   Lino
                 </div>
                 <div className="text-[13px] tracking-[0.22em] font-medium mt-1">NEWSLETTER</div>
               </div>
-              <div className="mt-32 text-white text-[13px] tracking-[0.28em] font-semibold">
+              <div className="mt-20 sm:mt-24 text-white text-[13px] tracking-[0.28em] font-semibold">
                 DAILY NEWSLETTER
               </div>
               <div className="flex-1" />
