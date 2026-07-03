@@ -10,7 +10,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "One carefully curated newsletter covering AI, startups, science, engineering, space, and breakthrough innovations — delivered weekly.",
+          "One carefully curated newsletter covering AI, startups, science, engineering, space, and breakthrough innovations — delivered daily.",
       },
     ],
   }),
@@ -246,7 +246,7 @@ function Index() {
           </div>
           <div className="px-6 sm:px-[78px] pb-8">
             <p className="text-center text-[18px] leading-[1.55]">
-              Every week, you'll receive a single, thoughtfully edited issue covering the most
+              Every day, you'll receive a single, thoughtfully edited issue covering the most
               important developments across AI, science, engineering, and the ideas shaping
               tomorrow. Written for curious people. Trusted by builders, founders, students, and
               creators.
@@ -268,7 +268,7 @@ function Index() {
                 the future?
               </h2>
               <p className="text-[#1E1E1E] text-[18px] leading-[1.5] mb-8 px-4">
-                Join thousands of readers exploring the future every week. Free forever.
+                Join thousands of readers exploring the future daily. Free forever.
               </p>
               <form
                 onSubmit={(e) => e.preventDefault()}
@@ -311,54 +311,6 @@ function Index() {
             Lino is an independent technology and science newsletter delivering thoughtful analysis,
             breakthrough discoveries, and the ideas shaping tomorrow.
           </p>
-          <div className="flex justify-center pb-8">
-            <div className="h-px w-24 bg-white/20" />
-          </div>
-          <div className="flex justify-center gap-5 pb-5">
-            {socials.map(({ Icon, label }) => (
-              <a
-                key={label}
-                href="#"
-                aria-label={label}
-                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[#1E1E1E] hover:border-white transition-colors"
-              >
-                <Icon className="w-[18px] h-[18px]" />
-              </a>
-            ))}
-          </div>
-          <p className="text-[10px] text-[#83837D] pb-4 leading-[1.6]">
-            If you no longer want to receive the Lino newsletter, you can unsubscribe at any time by
-            clicking "unsubscribe" below.
-          </p>
-          <div className="text-[12px] pb-3 space-x-2">
-            <a href="#" className="hover:underline">
-              About
-            </a>
-            <span className="text-[#8F8E88]">|</span>
-            <a href="#" className="hover:underline">
-              Archive
-            </a>
-            <span className="text-[#8F8E88]">|</span>
-            <a href="#" className="hover:underline">
-              Contact
-            </a>
-            <span className="text-[#8F8E88]">|</span>
-            <a href="#" className="hover:underline">
-              Privacy
-            </a>
-            <span className="text-[#8F8E88]">|</span>
-            <a href="#" className="hover:underline">
-              Terms
-            </a>
-            <span className="text-[#8F8E88]">|</span>
-            <a href="#" className="hover:underline">
-              Unsubscribe
-            </a>
-          </div>
-          <a href="#" className="text-[12px] text-white/80 hover:text-white inline-block">
-            ©2026 Lino, 660 4th Street #443, San Francisco, CA 94107 USA
-          </a>
-          <div className="pb-10" />
         </footer>
       </div>
     </div>
