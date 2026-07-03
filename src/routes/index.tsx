@@ -80,23 +80,22 @@ function Index() {
     setStatus("loading");
 
     try {
-      const response = await fetch(
+      await fetch(
         "https://script.google.com/macros/s/AKfycbyDXRCpdBeqYID2rndRMbsf3cXyySECreZ-S_sEqoPyjDqoxxYchinV3KNT_TmkIPHg8w/exec",
         {
           method: "POST",
+          mode: "no-cors", // Bypasses CORS preflight for Google Apps Script
           headers: {
-            "Content-Type": "application/json",
+            // Using text/plain instead of application/json to avoid preflight OPTIONS request
+            // which Google Apps Script blocks by default. The JSON body will still be sent and parsed correctly!
+            "Content-Type": "text/plain;charset=utf-8",
           },
           body: JSON.stringify({ email }),
         }
       );
 
-      // Google Apps Script can return opaque responses with mode: no-cors, 
-      // but since we are using regular cors (the default), we check response.ok
-      if (!response.ok) {
-        throw new Error("Failed to subscribe");
-      }
-
+      // With mode: "no-cors", the response is "opaque" so we cannot check response.ok
+      // We assume success if the fetch didn't throw a network error
       setStatus("success");
       setEmail("");
     } catch (error) {
