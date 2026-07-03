@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Facebook, Twitter, Instagram, Youtube, Linkedin, Music2 } from "lucide-react";
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -70,6 +70,41 @@ const socials = [
 ];
 
 function Index() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!email || status === "loading") return;
+
+    setStatus("loading");
+
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbyDXRCpdBeqYID2rndRMbsf3cXyySECreZ-S_sEqoPyjDqoxxYchinV3KNT_TmkIPHg8w/exec",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        }
+      );
+
+      // Google Apps Script can return opaque responses with mode: no-cors, 
+      // but since we are using regular cors (the default), we check response.ok
+      if (!response.ok) {
+        throw new Error("Failed to subscribe");
+      }
+
+      setStatus("success");
+      setEmail("");
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#050505] p-2 sm:p-4 font-sans">
       <div className="w-full max-w-[1400px] mx-auto shadow-2xl overflow-hidden ring-1 ring-white/5 rounded-xl sm:rounded-2xl">
@@ -271,24 +306,34 @@ function Index() {
                 Join thousands of readers exploring the future daily. Free forever.
               </p>
               <form
-                onSubmit={(e) => e.preventDefault()}
+                onSubmit={handleSubmit}
                 className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6"
               >
                 <input
                   type="email"
                   required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  disabled={status === "loading"}
                   aria-label="Email address for newsletter subscription"
                   placeholder="Enter your email"
-                  className="flex-1 rounded-lg px-4 py-3 bg-white text-[#1E1E1E] placeholder:text-[#83837D] outline-none border border-transparent focus:border-[#1E1E1E] font-medium"
+                  className="flex-1 rounded-lg px-4 py-3 bg-white text-[#1E1E1E] placeholder:text-[#83837D] outline-none border border-transparent focus:border-[#1E1E1E] font-medium disabled:opacity-50"
                 />
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center gap-2 bg-[#1E1E1E] text-white font-bold rounded-lg px-6 py-3 hover:bg-black hover:-translate-y-0.5 transition-all duration-200"
+                  disabled={status === "loading"}
+                  className="inline-flex items-center justify-center gap-2 bg-[#1E1E1E] text-white font-bold rounded-lg px-6 py-3 hover:bg-black hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-50 disabled:hover:-translate-y-0 disabled:cursor-not-allowed"
                 >
-                  Subscribe Free
+                  {status === "loading" ? "Subscribing..." : "Subscribe Free"}
                   <ArrowRight className="w-5 h-5" strokeWidth={2.5} />
                 </button>
               </form>
+              {status === "success" && (
+                <p className="text-[#1E1E1E] font-medium mb-4">You're subscribed! Check your inbox soon.</p>
+              )}
+              {status === "error" && (
+                <p className="text-red-600 font-medium mb-4">Something went wrong. Please try again.</p>
+              )}
               <p className="text-[#1E1E1E]/70 text-[13px]">
                 Free forever. No spam. Unsubscribe anytime.
               </p>
